@@ -7,43 +7,35 @@
     <title>Pertemuan 7 - Soal Latihan 1</title>
 </head>
 <body>
-    <h2>Pilih Materi yang Ingin Anda Pelajari</h2>
+    <h1>Materi Pemrograman PHP</h1>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label for="materi">Pilih Materi:</label><br>
-        <input type="text" id="materi" name="materi" placeholder="Masukkan angka 1-4" required><br>
-        <label for="detail">Detail:</label><br>
-        <label for="1">[1] Hitung Nilai Akhir dan Grade</label><br>
-        <label for="2">[2] Kalkulator</label><br>
-        <label for="3">[3] Bilangan Genap Habis Dibagi 3</label><br>
-        <label for="4">[4] Perkalian Matriks</label><br><br>
-        <input type="submit" name="submit" value="Kirim">
+        <label for="material">Pilih Materi</label><br>
+        <input type="number" id="material" name="material" min="1" max="4" required><label>[1][2][3][4]</label><br>
+        <label for="materi1">[1] Penggunaan IF</label><br>
+        <label for="materi2">[2] Penggunaan SWITCH...CASE</label><br>
+        <label for="materi3">[3] Penggunaan LOOPING</label><br>
+        <label for="materi4">[4] Penggunaan ARRAY</label><br><br>
+        <input type="submit" value="Kirim">
     </form>
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $materi = $_POST["materi"];
-
-        if ($materi >= 1 && $materi <= 4) {
-            switch ($materi) {
-                case '1':
-                    // Jalankan program menentukan nilai akhir dan grade seperti file Pert-3_Latihan-2.php menggunakan IF.....ELSE
-                    include "Pert-3_Latihan-2.php";
-                    break;
-                case '2':
-                    // Jalankan program membuat kalkulator seperti file Pert-2_Latihan-2.php menggunakan SWITCH....CASE
-                    include "Pert-2_Latihan-2.php";
-                    break;
-                case '3':
-                    // Buatlah tampilan untuk menampilkan bilangan genap yang habis dibagi 3 dan hitung jumlah bilangan tersebut seperti file Pert-4_Latihan-3.php
-                    include "Pert-4_Latihan-3.php";
-                    break;
-                case '4':
-                    // Buatlah tampilan perkalian Matriks yang telah dikerjakan seperti file Pert-4_Latihan-2.php
-                    include "Pert-4_Latihan-2.php";
-                    break;
-            }
+        $material = $_POST['material'];
+        
+        if ($material == 1) {
+            header("Pert-3_Latihan-2.php");
+            exit;
+        } elseif ($material == 2) {
+            header("Location: Pert-2_Latihan-2.php");
+            exit;
+        } elseif ($material == 3) {
+            header("Location: Pert-4_Latihan-3.php");
+            exit;
+        } elseif ($material == 4) {
+            header("Location: Pert-4_Latihan-2.php");
+            exit;
         } else {
-            echo "Pilih materi dengan memasukkan angka 1-4.";
+            echo "Hanya Pilih Angka 1 - 4!";
         }
     }
     ?>
