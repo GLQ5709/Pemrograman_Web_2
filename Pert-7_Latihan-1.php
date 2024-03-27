@@ -23,7 +23,7 @@
         $material = $_POST['material'];
         
         if ($material == 1) {
-            header("Pert-3_Latihan-2.php");
+            header("Location: Pert-3_Latihan-2.php");
             exit;
         } elseif ($material == 2) {
             header("Location: Pert-2_Latihan-2.php");
