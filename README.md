@@ -1,3 +1,5 @@
 # Pemrograman_Web_2
-Seluruh tugas terhapus karna mencoba git di VSC......
-![WhatsApp Image 2024-05-17 at 23 08 11_670e4a22](https://github.com/GLQ5709/Pemrograman_Web_2/assets/146647753/274a32f7-c01f-4f45-a154-589f89b98075)
+
+Nama  : RYO AKBAR
+Nim   : 211011400877
+Kelas : 06TPLM004
