@@ -1,0 +1,7 @@
+CREATE DATABASE db_pw2_pert11;
+
+CREATE TABLE tbl_mhs (mhsID int NOT NULL AUTO_INCREMENT, PRIMARY KEY(mhsID), FirstName varchar(15), LastName varchar(15), Age int);
+
+CREATE TABLE tblnilai (nim varchar(12) NOT NULL, namamhs varchar(30), matakuliah varchar(20), uts float(5,2), uas float(5,2), tugas float(5,2), jmlhadir int(2), PRIMARY KEY(nim));
+
+ALTER TABLE tblnilai ADD COLUMN nilaiakhir FLOAT(5,2), ADD COLUMN grade VARCHAR(2);
