@@ -1,0 +1,27 @@
+DELIMITER $$
+
+    CREATE PROCEDURE insert_datatable(in p_kode int(11),in p_nama_barang varchar(20), in p_jumlah int(11))
+    LANGUAGE SQL
+    DETERMINISTIC
+    SQL SECURITY DEFINER
+    COMMENT 'Melakukan Insert Data Ke tabel_1'
+    BEGIN
+    
+    DECLARE exit handler for sqlexception
+        BEGIN
+            -- ERROR
+        ROLLBACK;
+    END;
+
+    DECLARE exit handler for sqlwarning
+        BEGIN
+            -- WARNING
+        ROLLBACK;
+    END;
+
+    START TRANSACTION;
+    INSERT INTO tabel_1 (kode, nama_barang, jumlah) VALUES (p_kode, p_nama_barang, p_jumlah);
+
+    COMMIT;
+    END
+$$

@@ -1,0 +1,28 @@
+DELIMITER $$
+
+    CREATE PROCEDURE update_datatable(in id int(11),in jml int(11))
+    LANGUAGE SQL
+    DETERMINISTIC
+    SQL SECURITY DEFINER
+    COMMENT 'First SP at Expert developer'
+    BEGIN
+    
+    DECLARE exit handler for sqlexception
+        BEGIN
+            -- ERROR
+        ROLLBACK;
+    END;
+
+    DECLARE exit handler for sqlwarning
+        BEGIN
+            -- WARNING
+        ROLLBACK;
+    END;
+
+    START TRANSACTION;
+    UPDATE tabel_1 SET jumlah = jumlah - jml WHERE kode = id;
+    UPDATE tabel_2 SET jumlah = jumlah + jml WHERE kode = id;
+
+    COMMIT;
+    END
+$$
